@@ -1,5 +1,6 @@
 source .env.sample
 source ~/.zshrc
+export SONAR_TOKEN
 
 ORGANIZATION=luis-ayala15
 
