@@ -36,6 +36,8 @@ if [ "${returnCode}" != "0" ]; then
     exit 1
 fi
 sed -i '' "/sonar.projectName=/ s/=.*/=${ORGANIZATION}/" sonar-project.properties
+echo "SONAR_TOKEN="$SONAR_TOKEN >> .env
+
 returnCode=$?
 if [ "${returnCode}" != "0" ]; then
     echo "Sed failed"
