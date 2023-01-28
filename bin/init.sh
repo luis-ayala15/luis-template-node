@@ -6,13 +6,13 @@ template=$(git remote get-url --push origin)
 echo "Enter the name of the repository: "
 read nameOfRepo
 
-gh repo create LUIS-AYALA/${nameOfRepo} --template="${template}" --public
+gh repo create luis-ayala15/${nameOfRepo} --template="${template}" --public
 echo "Succesfully initialized ${nameOfRepo}"
 cd ../
 echo "root folder"
 echo "Cloning Repo ${nameOfRepo}"
 sleep 10
-gh repo clone LUIS-AYALA/${nameOfRepo} ${nameOfRepo}
+gh repo clone luis-ayala15/${nameOfRepo} ${nameOfRepo}
 returnCode=$?
 if [ "${returnCode}" != "0" ]; then
     echo "GH failed"
@@ -42,8 +42,8 @@ jq '.name = "'${nameOfRepo}'"' package.json > "$tmp" && mv "$tmp" package.json
 jq '.description = "'${nameOfRepo}'"' package.json > "$tmp" && mv "$tmp" package.json
 echo "Package.json file updated name and description with value ${nameOfRepo}"
 jq '.repository.url = "git+'${repo}'"' package.json > "$tmp" && mv "$tmp" package.json
-jq '.bugs.url = "https://github.com/LUIS-AYALA/'${nameOfRepo}'/issues"' package.json > "$tmp" && mv "$tmp" package.json
-jq '.homepage = "https://github.com/LUIS-AYALA/'${nameOfRepo}'#readme"' package.json > "$tmp" && mv "$tmp" package.json
+jq '.bugs.url = "https://github.com/luis-ayala15/'${nameOfRepo}'/issues"' package.json > "$tmp" && mv "$tmp" package.json
+jq '.homepage = "https://github.com/luis-ayala15/'${nameOfRepo}'#readme"' package.json > "$tmp" && mv "$tmp" package.json
 echo "Package.json file updated relevant urls with value ${nameOfRepo}"
 
 #nvm use
