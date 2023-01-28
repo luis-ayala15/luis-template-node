@@ -1,0 +1,45 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint:fix": "eslint --cache --fix",
+    "lint:verify": "eslint .",
+    "prepare": "husky install",
+    "sonarcloud": "npx sonar-scanner",
+    "snyk": "npx snyk test",
+    "prettier:fix": "prettier --write",
+    "prettier:verify": "prettier --check \"*.{js,css,md,yml,json}\"",
+    "test": "npm run test:unit",
+    "test:unit": "jest --coverage --verbose",
+    "test:unit:watch": "npm run test:unit -- --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.7.0",
+    "husky": "^8.0.0",
+    "jest": "^28.0.3",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "prettier-plugin-sh": "^0.12.6",
+    "snyk": "^1.981.0",
+    "sonarqube-scanner": "^2.8.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix"
+    ],
+    "*.{js,css,md,yml}": [
+      "npm run prettier:fix"
+    ]
+  }
+}

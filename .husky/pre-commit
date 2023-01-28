@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx lint-staged
+
+detect-secrets-hook --baseline .secrets.baseline $(git diff --cached --name-only)

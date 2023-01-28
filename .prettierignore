@@ -1,0 +1,15 @@
+.vscode
+.eslintignore
+.gitignore
+.husky
+.lintstagedrc
+.prettierignore
+.nvmrc
+coverage
+node_modules
+.shellspec
+bin/*.sh
+spec/*.sh
+.env.sample
+sonar-project.properties
+.secrets.baseline
