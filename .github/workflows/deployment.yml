@@ -3,7 +3,7 @@ name: SonarScanner
 on: [push]
 
 jobs:
-  run test:
+  run-test:
     runs-on: ubuntu-latest
 
     steps:
