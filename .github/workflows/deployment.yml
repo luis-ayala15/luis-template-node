@@ -22,7 +22,7 @@ jobs:
         run: npm test
   sonar-scanner:
     runs-on: ubuntu-latest
-    needs: test
+    needs: run-test
 
     steps:
       - name: Checkout code
