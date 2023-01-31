@@ -1,6 +1,8 @@
 name: SonarScanner
 
 on: [push]
+branches:
+  - main
 
 jobs:
   run-test:
