@@ -47,7 +47,7 @@ jobs:
           token: ${{ secrets.SONAR_TOKEN }}
 
       - name: Run SonarScanner
-        uses: SonarSource/sonarcloud-github-action@main
+        uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
