@@ -46,6 +46,7 @@ jobs:
       - name: Run SonarScanner
         run: npm run sonarcloud
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   lint:
     runs-on: ubuntu-latest
