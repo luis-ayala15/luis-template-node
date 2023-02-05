@@ -45,7 +45,8 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           flags: lcov
-          token: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run SonarScanner
         uses: SonarSource/sonarcloud-github-action@master
